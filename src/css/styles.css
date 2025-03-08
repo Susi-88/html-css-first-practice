@@ -3,16 +3,11 @@
 /* 
 Primer color - GREEN:   #2C6626
 
-    darkest green:      #083204
-    dark green:         #194E13
-    light green:        #45803F
-    lighter green:      #679F61
-    lightest green:     #DAF4D8
+    dark green:      #083204
+    light green:     #DAF4D8
 
 Secunder color - GRAY:       #3D3F45
 Third color - LIGHT GRAY:    #E5E5E5
-
-
 */
 
 html {
@@ -28,9 +23,45 @@ body {
     box-sizing: border-box;
 }
 
+/*  === GENERAL === */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.active {
+    background-color: #083204 !important;
+}
+
+.important-text {
+    font-weight: bold;
+}
+
+.screenreader {
+    display: none;
+}
+
+.btn-primer {
+    background-color: #083204;
+    color: #FFF;
+    padding: .6rem 1.2rem;
+    border: 2px solid #083204;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primer:hover {
+    background-color: #DAF4D8;
+    border: 2px solid #DAF4D8;
+    color: #083204;
+    font-weight: bold;
+}
+
 /*  === NAVIGATION BAR === */
 
-.header-nav {
+#header-nav {
     width: 100%;
     height: 50px;
     background-color: #2C6626;
@@ -38,62 +69,52 @@ body {
     font-size: 1.2rem;
 }
 
-.header-nav .col-6 {
+#header-nav .col-6 {
     padding-top: 0;
     padding-bottom: 0;
 }
 
-.header-nav a > img{
+#header-nav a > img{
     height: 35px;
     width: auto;
     float: left;
     margin-top: 7.5px;
 }
 
-.header-nav ul {
+#header-nav ul {
     margin: 0;
     padding: 0;
     float: right;
 }
 
-.header-nav ul > li {
+#header-nav ul > li {
     display: inline-block;
     height: 100%;
     padding: .8rem .8rem;
 }
 
-.header-nav ul > li > a {
+#header-nav ul > li > a {
     color: #FFF;
     text-decoration: none;
 }
 
-.header-nav ul > li > a:link {
+#header-nav ul > li > a:link {
     color: #FFF;
     text-decoration: none;
 }
 
-.header-nav ul > li > a:hover {
+#header-nav ul > li > a:visited {
+    color: #FFF;
+    text-decoration: none;
+}
+
+#header-nav ul > li > a:hover {
     color: #083204;
-    text-decoration: none;
-}
-
-.header-nav ul > li > a:active {
-    color: #FFF;
-    text-decoration: none;
-}
-
-.header-nav ul > li > a:visited {
-    color: #FFF;
-    text-decoration: none;
-}
-
-.active {
-    background-color: #083204;
 }
 
 /*  === HEADER-BANNER === */
 
-.header-banner {
+#header-banner {
     background: url("../img/ECOTECH_header.png") no-repeat;
     width: 100%;
     height: 0;
@@ -101,7 +122,7 @@ body {
     background-size: contain;
 }
 
-.header-banner-small {
+#header-banner-small {
     background: url("../img/ECOTECH_header.png") no-repeat;
     width: 100%;
     height: 0;
@@ -110,9 +131,69 @@ body {
 }
 
 /*  === NEWSLETTER SECTION === */
-.newsletter {
+
+#newsletter-section {
     background-color: #2C6626;
     color: #FFF;
+}
+
+#newsletter-form {
+    width: 100%;
+    float: right;
+    text-align: right;
+    
+}
+
+#newsletter-text {
+    font-size: 1.2rem;
+}
+
+#newsletter-form-email {
+    width: 70%;
+    padding: .6rem;
+    margin: 1.2rem .2rem 1.2rem 0;
+    border: 2px solid #FFF;
+    border-radius: 4px;
+}
+
+@media (max-width: 1247px) {
+    #newsletter-form-email {
+        width: 60%;
+    }
+}
+
+@media (max-width: 958px) {
+    #newsletter-form-email {
+        margin: .6rem 0;
+        width: 100%;
+    }
+    #newsletter-form-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #newsletter .col-4 {
+        display: none;
+    }
+    #newsletter-form-email {
+        margin: 0 .2rem 0 0;
+        width: 65%;
+        float: left;
+    }
+    #newsletter-form-btn {
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    #newsletter-form-email {
+        margin: .6rem 0;
+        width: 100%;
+    }
+    #newsletter-form-btn {
+        width: 100%;
+    }
 }
 
 /*  === GRID-SYSTEM === */
@@ -135,21 +216,22 @@ body {
     padding: .8rem;
 }
 
-.col-1 {width: 16.666%;}
-.col-2 {width: 33.333%;}
-.col-3 {width: 50%;}
-.col-4 {width: 66.666%;}
-.col-5 {width: 83.333%;}
-.col-6 {width: 100%;}
+.col-1 {width: 16.666%; }
+.col-2 {width: 33.333%; }
+.col-3 {width: 50%;     }
+.col-4 {width: 66.666%; }
+.col-5 {width: 83.333%; }    
+.col-6 {width: 100%;    }
 
 @media (max-width: 1024px) {
     .col-1 {width: 33.333%;}
 }
 
 @media (max-width: 768px) {
-    .col-1 {width: 50%;}
+    .col-1 {width: 50%; }
     .col-2 {width: 100%;}
     .col-3 {width: 100%;}
+    .col-4 {width: 100%;}
 }
 
 @media (max-width: 480px) {
@@ -157,6 +239,4 @@ body {
     .col-2 {width: 100%;}
     .col-3 {width: 100%;}
     .col-4 {width: 100%;}
-    .col-5 {width: 100%;}
-    .col-6 {width: 100%;}
 }
